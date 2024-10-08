@@ -3,7 +3,7 @@ import personajes.*
 import niveles.*
 
 program Game {
-	game.title("Granja de lamari")
+	game.title("Granja lamari")
 	game.height(10)
 	game.width(10)
 	game.boardGround("ground.png")
