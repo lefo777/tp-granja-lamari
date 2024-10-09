@@ -4,8 +4,8 @@ import niveles.*
 
 program Game {
 	game.title("Granja lamari")
-	game.height(10)
-	game.width(10)
+	game.height(config.height())
+	game.width(config.width())
 	game.boardGround("ground.png")
 
 	nivel1.iniciar()
