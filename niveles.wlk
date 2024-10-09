@@ -13,10 +13,10 @@ object nivel1 {
 
 object config {
     method configurarTeclas(){
-        keyboard.left().onPressDo({ (hector.position().left(1)) })
-		keyboard.right().onPressDo({ (hector.position().right(1))})
-		keyboard.up().onPressDo({ (hector.position().up(1))})
-		keyboard.down().onPressDo({ (hector.position().down(1))})
+        keyboard.left().onPressDo({ hector.mover(hector.position().left(1)) })
+		keyboard.right().onPressDo({ hector.mover(hector.position().right(1))})
+		keyboard.up().onPressDo({ hector.mover(hector.position().up(1))})
+		keyboard.down().onPressDo({ hector.mover(hector.position().down(1))})
     }
 
 }

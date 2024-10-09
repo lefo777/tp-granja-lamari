@@ -6,4 +6,8 @@ object hector {
     var property position = game.origin()
 
     method image() = "player.png"
+
+    method mover(nuevaPosicion){
+        position = nuevaPosicion
+    }
 }
