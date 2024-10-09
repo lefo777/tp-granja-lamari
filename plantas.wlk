@@ -32,7 +32,7 @@ object trigo{
 }
 
 object tomasco{
-    var property position = game.at(-1,0)
+    var property position = null
     method image() = "assets/tomasco.png"
     method regar(){
         if(position.y() > config.height()){
