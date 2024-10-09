@@ -8,6 +8,9 @@ object hector {
     method image() = "player.png"
 
     method mover(nuevaPosicion){
-        position = nuevaPosicion
+        if (nuevaPosicion.x() < config.width() && nuevaPosicion.x() >= 0 && nuevaPosicion.y() < config.height() && nuevaPosicion.y() >= 0){
+            position = nuevaPosicion
+        }
+
     }
 }
