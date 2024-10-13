@@ -1,18 +1,20 @@
 import wollok.game.*
 import niveles.*
-object maiz{
-    var property regada = false
-    method image(){
-        return if(self.regada()){
-            "assets/corn_adult.png"
-        } else{
-            "assets/corn_baby.png"
-        }
-    }
+import personajes.*
 
-    method regar(){
-        regada = true
-    }
+class Maiz {
+	const property position
+	var property esAdulto = false
+	var sufijo = "baby"
+	const property precio = 150
+
+	method image() = "corn_" + sufijo + ".png"
+	method estaListo() = self.esAdulto()
+
+	method regada() {
+		esAdulto = true
+		sufijo = "adult"
+	}
 }
 
 object trigo{
