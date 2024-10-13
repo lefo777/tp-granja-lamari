@@ -17,28 +17,33 @@ class Maiz {
 	}
 }
 
-object trigo{
-    var property evolucion = 0
+class Trigo {
+	const property position
+	var nivel = 0
+//	const property precio
 
-    method image(){
-        return "wheat_" + evolucion + ".png"
-    }
+	method image() = "wheat_" + nivel.toString() + ".png"
+	method estaListo() = nivel >= 2
+	method precio() = (nivel.min(3) - 1) * 100
 
-    method regar(){
-        return if(evolucion < 3){
-            evolucion = evolucion + 1
-        } else {
-            evolucion = 0
-        }
-    }
+	method regada() {
+		// sufijo = (sufijo + 1)
+		nivel = (nivel + 1) % 4 //resto de la division
+	}
 }
 
-object tomasco{
-    var property position = game.at(-1,0)
-    method image() = "assets/tomasco.png"
-    method regar(){
-        if(position.y() > config.height()){
-            position = game.at(position.x(), 0)
-        }
-    }
+class Tomaco {
+	var property position
+	var property esAdulto = false
+	var sufijo = "baby"
+	const property precio = 80
+
+	method image() = "tomaco_" + sufijo + ".png"
+	method estaListo() = true
+
+	method regada() {
+		esAdulto = true
+		sufijo = "adult"
+		position = if (position.y() < 9) position.up(1) else game.at(position.x(),0)
+	}
 }

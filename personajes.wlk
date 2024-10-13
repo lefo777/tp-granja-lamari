@@ -26,13 +26,13 @@ object hector {
 
 	method sembrarTrigo() {
 		if(self.validacion()){	
-			game.addVisual(trigo.image())
+			game.addVisual(new Trigo(position = position))
 		}
 	}
 
 	method sembrarTomaco() {
 		if(self.validacion()){
-			game.addVisual(tomasco)
+			game.addVisual(new Tomaco(position = position))
 		}
 	}
 

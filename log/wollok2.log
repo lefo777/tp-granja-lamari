@@ -132,3 +132,5 @@
 {"level":"info","message":"onRequest - completionItem/resolve","timestamp":"2024-10-13T17:15:02.851Z"}
 {"level":"info","message":"onRequest - completionItem/resolve","timestamp":"2024-10-13T17:15:02.970Z"}
 {"exitCode":{"address":"::","code":"EADDRINUSE","errno":-4091,"port":4200,"syscall":"listen"},"level":"info","message":"👾 Game executed game.Game on c:\\Users\\Martin\\Desktop\\ComputerScience\\Algoritmos1\\tp-granja-lamari","timeElapsed":248,"timestamp":"2024-10-13T17:16:27.140Z"}
+{"exitCode":"SIGHUP","level":"info","message":"👾 Game executed game.Game on c:\\Users\\Martin\\Desktop\\ComputerScience\\Algoritmos1\\tp-granja-lamari","timeElapsed":234874,"timestamp":"2024-10-13T17:21:28.605Z"}
+{"level":"info","message":"onRequest - WORKSPACE_URI:file:///c%3A/Users/Martin/Desktop/ComputerScience/Algoritmos1/tp-granja-lamari","timestamp":"2024-10-13T17:21:39.522Z"}
