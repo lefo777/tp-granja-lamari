@@ -531,3 +531,6 @@
 {"level":"info","message":"⌛ Building environment","timeElapsed":201,"timestamp":"2024-10-15T22:04:57.451Z"}
 {"level":"info","message":"⌛ Validating plantas.wlk","timeElapsed":287,"timestamp":"2024-10-15T22:04:57.745Z"}
 {"level":"info","message":"⌛ Validating game.wpgm","timeElapsed":159,"timestamp":"2024-10-15T22:04:57.904Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":341,"timestamp":"2024-10-15T22:15:40.912Z"}
+{"level":"info","message":"⌛ Validating plantas.wlk","timeElapsed":316,"timestamp":"2024-10-15T22:15:41.245Z"}
+{"level":"info","message":"⌛ Validating game.wpgm","timeElapsed":316,"timestamp":"2024-10-15T22:15:41.565Z"}
