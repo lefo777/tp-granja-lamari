@@ -1,5 +1,6 @@
 import wollok.game.*
 import niveles.*
+import plantas.*
 
 
 object hector {
@@ -13,4 +14,54 @@ object hector {
         }
 
     }
+
+    method validacion() = game.colliders(self).isEmpty()
+
+	method sembrar(planta) {
+		if(self.validacion()){
+			game.addVisual(planta)
+		}
+	}
+	method sembrarMaiz() {
+		if(self.validacion()){
+			game.addVisual(new Maiz(position = position))}
+	}
+
+	method sembrarTrigo() {
+		if(self.validacion()){	
+			game.addVisual(new Trigo(position = position))
+		}
+	}
+
+	method sembrarTomaco() {
+		if(self.validacion()){
+			game.addVisual(new Tomaco(position = position))
+		}
+	}
+
+    method regar() {
+		if (game.colliders(self).isEmpty()) {
+			game.say(self, "No hay que regar")
+		} else game.uniqueCollider(self).regada()
+	}
+}
+
+class Regador {
+	const property position = game.center()
+	const property image = "aspersor.png"
+
+	method regada() {
+	// No pasa na'
+	}
+
+	method regarCultivosAlrededor() {
+		self.cultivosAlrededor().forEach({ cultivo => cultivo.regada()})
+	}
+
+	//method cultivosAlrededor() = self.posicionesAlrededor().flatMap({ posicion => posicion.allElements() })
+	method cultivosAlrededor() = self.posicionesAlrededor().flatMap({ posicion => game.getObjectsIn(posicion)})
+	method laterales() = [ position.up(1), position.left(1), position.down(1), position.right(1) ]
+	method esquinas() = [ position.up(1).left(1), position.up(1).right(1), position.down(1).left(1), position.down(1).right(1) ]
+
+	method posicionesAlrededor() = self.laterales() + self.esquinas()
 }
