@@ -35,15 +35,15 @@ class Trigo {
 class Tomaco {
 	var property position
 	var property esAdulto = false
-	var sufijo = "baby"
+	var sufijo = "_baby"
 	const property precio = 80
 
-	method image() = "tomaco_" + sufijo + ".png"
+	method image() = "tomaco" + sufijo + ".png"
 	method estaListo() = true
 
 	method regada() {
 		esAdulto = true
-		sufijo = "adult"
+		sufijo = ""
 		position = if (position.y() < 9) position.up(1) else game.at(position.x(),0)
 		self.colisiono()
 	}
