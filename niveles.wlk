@@ -6,6 +6,7 @@ object nivel1 {
 
 	method iniciar() {
 		game.addVisual(hector)
+        game.addVisual(textoDinero)
 		config.configurarTeclas()
         const regador = new Regador()
 		game.addVisual(regador)
@@ -32,4 +33,8 @@ object config {
 
     method height() = height
     method width() = width
+}
+object textoDinero{
+    method textoDinero() = "$" + hector.dinero
+    method position()= game.center()
 }

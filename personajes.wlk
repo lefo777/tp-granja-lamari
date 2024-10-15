@@ -6,6 +6,7 @@ import plantas.*
 object hector {
     var property position = game.origin()
     const property cosechadas = []
+    var dinero = 0
 
     method image() = "player.png"
 
@@ -15,6 +16,13 @@ object hector {
         }
 
     }
+
+    method vender(){
+        dinero = dinero + cosechadas.map({cosechada => cosechada.precio()}).sum()
+        cosechadas.clear()
+    }
+
+    method regada(){game.say(self, "Me moje")}
 
     method validacion() = game.colliders(self).isEmpty()
 
