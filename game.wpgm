@@ -11,6 +11,6 @@ program Game {
 	nivel1.iniciar()
 
 	game.showAttributes(hector) //Debug
-
+	
 	game.start()
 }

@@ -35,6 +35,13 @@ object config {
     method width() = width
 }
 object textoDinero{
-    method textoDinero() = "$" + hector.dinero
-    method position()= game.center()
+    method text() = "$" //+ (hector.dinero).toString()
+    method position()= game.at(0,9)
+    method textColor() = paleta.blanco()
+}
+
+object paleta {
+  const property verde = "00FF00FF"
+  const property rojo = "FF0000FF"
+  const property blanco = "#FFFFFF00"
 }
