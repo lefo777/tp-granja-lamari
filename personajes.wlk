@@ -5,6 +5,7 @@ import plantas.*
 
 object hector {
     var property position = game.origin()
+    const property cosechadas = []
 
     method image() = "player.png"
 
@@ -44,11 +45,24 @@ object hector {
 			game.say(self, "No hay que regar")
 		} else game.uniqueCollider(self).regada()
 	}
+
+    method cosechar(){
+       if(self.validacion()){
+            game.say(self, "No hay nada para cosechar")
+		} 
+        if (game.uniqueCollider(self).esAdulto()) {
+            game.removeVisual(game.uniqueCollider(self))
+            cosechadas.add(game.uniqueCollider(self))
+        }
+    } 
 }
+
 
 class Regador {
 	const property position = game.center()
 	const property image = "aspersor.png"
+
+    method esAdulto(){return false}
 
 	method regada() {
 	// No pasa na'

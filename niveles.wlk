@@ -27,6 +27,7 @@ object config {
 		keyboard.t().onPressDo{ hector.sembrarTrigo()}
 		keyboard.o().onPressDo{ hector.sembrarTomaco()}
         keyboard.r().onPressDo{ hector.regar()}
+        keyboard.c().onPressDo{ hector.cosechar()}
     }
 
     method height() = height
