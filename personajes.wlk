@@ -49,6 +49,16 @@ object hector {
 		} else game.uniqueCollider(self).regada()
 	}
 
+	method cosechar(){
+       if(self.validacion()){
+            game.say(self, "No hay nada para cosechar")
+		} 
+        if (game.uniqueCollider(self).esAdulto()) {
+            game.removeVisual(game.uniqueCollider(self))
+            cosechadas.add(game.uniqueCollider(self))
+        }
+    }
+
     method vender(){
         dinero = dinero + cosechadas.map({cosechada => cosechada.precio()}).sum()
         cosechadas.clear()
@@ -62,16 +72,7 @@ object mercadoOrigen {
 
 object mercadoArriba {
 	const property position = game.at(9,9)
-	const property image = "market.png"
-    method cosechar(){
-       if(self.validacion()){
-            game.say(self, "No hay nada para cosechar")
-		} 
-        if (game.uniqueCollider(self).esAdulto()) {
-            game.removeVisual(game.uniqueCollider(self))
-            cosechadas.add(game.uniqueCollider(self))
-        }
-    } 
+	const property image = "market.png" 
 }
 
 
