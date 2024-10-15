@@ -20,10 +20,12 @@ class Maiz {
 class Trigo {
 	const property position
 	var nivel = 0
+
 //	const property precio
 
 	method image() = "wheat_" + nivel.toString() + ".png"
 	method estaListo() = nivel >= 2
+    method esAdulto() = nivel >= 2
 	method precio() = (nivel.min(3) - 1) * 100
 
 	method regada() {

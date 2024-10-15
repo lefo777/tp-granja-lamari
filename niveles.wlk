@@ -7,6 +7,7 @@ object nivel1 {
 	method iniciar() {
 		game.addVisual(mercadoOrigen)
 		game.addVisual(mercadoArriba)
+        game.addVisual(textoDinero)
         const regador = new Regador()
 		game.addVisual(regador)
 		game.addVisual(hector)
@@ -30,8 +31,13 @@ object config {
 		keyboard.o().onPressDo{ hector.sembrarTomaco()}
         keyboard.r().onPressDo{ hector.regar()}
 		keyboard.v().onPressDo{ hector.vender()}
+        keyboard.c().onPressDo{ hector.cosechar()}
     }
 
     method height() = height
     method width() = width
+}
+object textoDinero{
+    method textoDinero() = "$" + hector.dinero
+    method position()= game.center()
 }

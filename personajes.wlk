@@ -6,6 +6,7 @@ import plantas.*
 object hector {
     var property position = game.origin()
 	const property cosechadas = []
+    var dinero = 0
 
     method image() = "player.png"
 
@@ -15,6 +16,8 @@ object hector {
         }
 
     }
+
+    method regada(){game.say(self, "Me moje")}
 
     method validacion() = game.colliders(self).isEmpty()
 
@@ -46,7 +49,10 @@ object hector {
 		} else game.uniqueCollider(self).regada()
 	}
 
-	method vender() {}
+    method vender(){
+        dinero = dinero + cosechadas.map({cosechada => cosechada.precio()}).sum()
+        cosechadas.clear()
+    }
 }
 
 object mercadoOrigen {
@@ -57,11 +63,23 @@ object mercadoOrigen {
 object mercadoArriba {
 	const property position = game.at(9,9)
 	const property image = "market.png"
+    method cosechar(){
+       if(self.validacion()){
+            game.say(self, "No hay nada para cosechar")
+		} 
+        if (game.uniqueCollider(self).esAdulto()) {
+            game.removeVisual(game.uniqueCollider(self))
+            cosechadas.add(game.uniqueCollider(self))
+        }
+    } 
 }
+
 
 class Regador {
 	const property position = game.center()
 	const property image = "aspersor.png"
+
+    method esAdulto(){return false}
 
 	method regada() {
 	// No pasa na'
