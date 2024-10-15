@@ -6,7 +6,7 @@ import plantas.*
 object hector {
     var property position = game.origin()
 	const property cosechadas = []
-    var dinero = 0
+    var property dinero = 0
 
     method image() = "player.png"
 

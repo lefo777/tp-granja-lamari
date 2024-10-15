@@ -7,10 +7,10 @@ object nivel1 {
 	method iniciar() {
 		game.addVisual(mercadoOrigen)
 		game.addVisual(mercadoArriba)
-        game.addVisual(textoDinero)
         const regador = new Regador()
 		game.addVisual(regador)
 		game.addVisual(hector)
+        game.addVisual(textoDinero)
 		config.configurarTeclas()
 		game.onTick(1000, "REGADOR", { regador.regarCultivosAlrededor()})
     
@@ -38,7 +38,7 @@ object config {
     method width() = width
 }
 object textoDinero{
-    method text() = "$" //+ (hector.dinero).toString()
+    method text() = "$" + (hector.dinero).toString()
     method position()= game.at(0,9)
     method textColor() = paleta.blanco()
 }
