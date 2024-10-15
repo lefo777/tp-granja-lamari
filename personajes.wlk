@@ -5,6 +5,7 @@ import plantas.*
 
 object hector {
     var property position = game.origin()
+	const property cosechadas = []
 
     method image() = "player.png"
 
@@ -44,6 +45,18 @@ object hector {
 			game.say(self, "No hay que regar")
 		} else game.uniqueCollider(self).regada()
 	}
+
+	method vender() {}
+}
+
+object mercadoOrigen {
+	const property position = game.origin()
+	const property image = "market.png"
+}
+
+object mercadoArriba {
+	const property position = game.at(9,9)
+	const property image = "market.png"
 }
 
 class Regador {
