@@ -45,5 +45,13 @@ class Tomaco {
 		esAdulto = true
 		sufijo = "adult"
 		position = if (position.y() < 9) position.up(1) else game.at(position.x(),0)
+		self.colisiono()
+	}
+
+	method colisiono(){
+		if (game.colliders(self).isEmpty()){
+			return false
+		}
+		else self.regada()
 	}
 }
