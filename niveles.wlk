@@ -5,11 +5,13 @@ import personajes.*
 object nivel1 {
 
 	method iniciar() {
-		game.addVisual(hector)
+		game.addVisual(mercadoOrigen)
+		game.addVisual(mercadoArriba)
         game.addVisual(textoDinero)
-		config.configurarTeclas()
         const regador = new Regador()
 		game.addVisual(regador)
+		game.addVisual(hector)
+		config.configurarTeclas()
 		game.onTick(1000, "REGADOR", { regador.regarCultivosAlrededor()})
     
 	}
@@ -28,6 +30,7 @@ object config {
 		keyboard.t().onPressDo{ hector.sembrarTrigo()}
 		keyboard.o().onPressDo{ hector.sembrarTomaco()}
         keyboard.r().onPressDo{ hector.regar()}
+		keyboard.v().onPressDo{ hector.vender()}
         keyboard.c().onPressDo{ hector.cosechar()}
     }
 
